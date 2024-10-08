@@ -475,7 +475,7 @@ function MultiDragPlugin() {
 			if (typeof dragStarted !== "undefined" && dragStarted) return;
 
 			// Only deselect if selection is in this sortable
-			if (multiDragSortable !== this.sortable) return;
+			if (multiDragSortable !== this.sortable && this.multiDragKeyDown) return;
 
 			// Only deselect if target is not item in this sortable
 			if (evt && closest(evt.target, this.options.draggable, this.sortable.el, false)) return;
